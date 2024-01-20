@@ -11,12 +11,14 @@ body{
 /* Main content */
 
 #content-wrapper{
-    margin: 0 auto;
+    height: 700px;
+    margin: 5% auto;
     padding: 1em;
     background-color: #CBFFFC;
     border: 1px solid FFF6FF;
     filter: drop-shadow(4px 4px 4px #D8D8D8);
     border-radius: 1.5em;
+    vertical-align: middle;
 }
 
 #content-wrapper header{
@@ -25,36 +27,48 @@ body{
     color: #4B4B4B;
 }
 
-#wrapper form{
-    gap: 5%;
+#wrapper div#form{
     align-items: center;
 }
 
-form input{
+div#form input{
     width: 100%;
     border: none;
     border-radius: 2em;
     outline: none;
-    padding: 4%;
+    padding: 2%;
+    margin-top: 20%;
     font-size: 100%;
 }
 
-form button{
+div#form button{
     width: 100%;
     border: none;
     border-radius: 2em;
-    padding: 4%;
+    padding: 2%;
     background-color: #69E4DD;
     transition: 0.3s ease-in;
-    
+    margin-top: 2%;
 }
 
 #wrapper img{
-    width: 70%;
+    width: 50%;
+    margin-top: 10%;
 }
 
 @media (hover: hover){
-    button:hover{
+    div#form button:hover{
         background-color: #32cec6;
+    }
+}
+
+@media screen and(max-width: 576px){
+
+    form #city-name-search{
+        margin-top: 10%;
+    }
+
+    img{
+        margin-top: 50%;
     }
 }

@@ -25,19 +25,18 @@
     
     <header class="col-12 text-center text-md-start"><h1>.Weather</h1></header>
 
-    <section id="content-wrapper" class="col-lg-6">
+    <section id="content-wrapper" class="col-lg-9">
 
         <header><h3 id="city-name">Here will be city name.</h3></header>
 
         <div id="wrapper" class="row">
 
-            <form class="col-sm-5">
-                <input class="mb-2" type="text" id="city-name" placeholder="City name"/>
-                <button class="mb-4">Search</button>
-            </form>
+            <div id="form" class="col-sm-5">
+                <input class="mb-2" type="text" id="city-name-search" placeholder="City name"/>
+                <button id="search" class="mb-4">Search</button>
+            </div>
 
-            <form class="col-sm-7">
-                <section id="result" class=" row justify-content-center">
+            <section id="result" class=" row justify-content-center col-sm-7">
 
                 <img src="Images/logo.png" alt="Aplikacja pogodowa"/>
 
@@ -50,5 +49,8 @@
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="JS/index.js"></script>
 </body>
 </html>
