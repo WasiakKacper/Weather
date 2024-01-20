@@ -20,9 +20,33 @@ document.getElementById("search").addEventListener('click', ()=>{
                 var data = await response.json();
 
                 console.log(data);
-                document.getElementById("temp").innerHTML = "Temperatura: "+data.main.temp+"°C";
+                document.getElementById("temp").innerHTML = "Temperatura: "+Math.round(data.main.temp)+"°C";
                 document.getElementById("wind").innerHTML = "Prędkość wiatru: "+data.wind.speed+"km/h";
                 document.getElementById("humidity").innerHTML = "Wilgotność: "+data.main.humidity+"%";
+
+                if(data.weather[0].main == "Clouds"){
+                    document.getElementById("image").src = "Images/cloudly.png";
+                }
+
+                else if(data.weather[0].main == "Mist"){
+                    document.getElementById("image").src = "Images/cloudly.png";
+                }
+                
+                else if(data.weather[0].main == "Rain"){
+                    document.getElementById("image").src = "Images/rainy.png";
+                }
+
+                else if(data.weather[0].main == "Drizzle"){
+                    document.getElementById("image").src = "Images/rainy.png";
+                }
+
+                else if(data.weather[0].main == "Snow"){
+                    document.getElementById("image").src = "Images/snowy.png";
+                }
+
+                else if(data.weather[0].main == "Clear"){
+                    document.getElementById("image").src = "Images/sunny.png";
+                }
             }  
 
             showWeather();
@@ -49,11 +73,33 @@ document.addEventListener('keypress', (e)=>{
                 var data = await response.json();
 
                 console.log(data);
-                document.getElementById("temp").innerHTML = "Temperatura: "+data.main.temp+"°C";
+                document.getElementById("temp").innerHTML = "Temperatura: "+Math.round(data.main.temp)+"°C";
                 document.getElementById("wind").innerHTML = "Prędkość wiatru: "+data.wind.speed+"km/h";
-                document.getElementById("humidity").innerHTML = "Wilgotność: "+data.main.humidity+"%";]
-/* 
-                const weather = data. */
+                document.getElementById("humidity").innerHTML = "Wilgotność: "+data.main.humidity+"%";``
+
+                if(data.weather[0].main == "Clouds"){
+                    document.getElementById("image").src = "Images/cloudly.png";
+                }
+
+                else if(data.weather[0].main == "Mist"){
+                    document.getElementById("image").src = "Images/cloudly.png";
+                }
+                
+                else if(data.weather[0].main == "Rain"){
+                    document.getElementById("image").src = "Images/rainy.png";
+                }
+
+                else if(data.weather[0].main == "Drizzle"){
+                    document.getElementById("image").src = "Images/rainy.png";
+                }
+
+                else if(data.weather[0].main == "Snow"){
+                    document.getElementById("image").src = "Images/snowy.png";
+                }
+
+                else if(data.weather[0].main == "Clear"){
+                    document.getElementById("image").src = "Images/sunny.png";
+                }
             }  
 
             showWeather();
