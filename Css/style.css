@@ -56,6 +56,15 @@ div#form button{
     margin-top: 10%;
 }
 
+#wrapper h2{
+    margin-top: 2%;
+    text-align: center;
+}
+
+#wrapper p{
+    text-align: center;
+}
+
 @media (hover: hover){
     div#form button:hover{
         background-color: #32cec6;
