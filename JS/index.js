@@ -21,6 +21,7 @@ document.getElementById("search").addEventListener('click', ()=>{
 
                 console.log(data);
                 document.getElementById("temp").innerHTML = "Temperatura: "+Math.round(data.main.temp)+"°C";
+                document.getElementById("feel-temp").innerHTML = "Temperatura odczuwalna: "+Math.round(data.main.feels_like)+"°C";
                 document.getElementById("wind").innerHTML = "Prędkość wiatru: "+data.wind.speed+"km/h";
                 document.getElementById("humidity").innerHTML = "Wilgotność: "+data.main.humidity+"%";
 

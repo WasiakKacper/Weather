@@ -5,16 +5,21 @@
 }
 
 body{
-    background-color: #fff6ff;
+    background-color: #DCF2F1;
+}
+
+header{
+    margin: 2% 0;
+    color: #0F1035;
 }
 
 /* Main content */
 
 #content-wrapper{
-    height: 700px;
-    margin: 5% auto;
+    height: auto;
+    margin: 10% auto;
     padding: 1em;
-    background-color: #CBFFFC;
+    background-color: #7FC7D9;
     border: 1px solid FFF6FF;
     filter: drop-shadow(4px 4px 4px #D8D8D8);
     border-radius: 1.5em;
@@ -22,13 +27,34 @@ body{
 }
 
 #content-wrapper header{
-    padding: 1em;
+    margin: 1%;
     text-align: center;
-    color: #4B4B4B;
+    color: #DCF2F1;
+    font-size: medium;
 }
 
 #wrapper div#form{
     align-items: center;
+}
+
+#wrapper{
+    height: auto;
+}
+
+#wrapper img{
+    width: 50%;
+    margin: 5% auto 0 auto  ;
+}
+
+#wrapper h2{
+    margin-top: 2%;
+    text-align: center;
+    color: #DCF2F1;
+}
+
+#wrapper p{
+    text-align: center;
+    color: #DCF2F1;
 }
 
 div#form input{
@@ -36,7 +62,7 @@ div#form input{
     border: none;
     border-radius: 2em;
     outline: none;
-    padding: 2%;
+    padding: 2% 4%;
     margin-top: 20%;
     font-size: 100%;
 }
@@ -46,28 +72,15 @@ div#form button{
     border: none;
     border-radius: 2em;
     padding: 2%;
-    background-color: #69E4DD;
+    background-color: #365486;
     transition: 0.3s ease-in;
     margin-top: 2%;
-}
-
-#wrapper img{
-    width: 50%;
-    margin-top: 10%;
-}
-
-#wrapper h2{
-    margin-top: 2%;
-    text-align: center;
-}
-
-#wrapper p{
-    text-align: center;
+    color: #DCF2F1;
 }
 
 @media (hover: hover){
     div#form button:hover{
-        background-color: #32cec6;
+        background-color: #466cad;
     }
 }
 
