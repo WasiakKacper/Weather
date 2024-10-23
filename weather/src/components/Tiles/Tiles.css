@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+* {
+  position: static;
+}
+
 :root {
   --lightblue: #69e4dd;
   --blue: #24caea;
   --darkblue: #37aaeb;
   --white: #f0ffff;
   --dark: #424242;
-  --grey: #d9d9d9;
+  --grey: #e4e4e4;
 }
 
 section {
@@ -27,31 +31,44 @@ section.active {
 .left {
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 40%;
   height: 350px;
   border-radius: 1%;
   background-color: var(--white);
 }
-.right {
-  margin-left: 5%;
+
+.wrapper {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin-top: 10%;
 }
 
-.tile {
-  display: flex;
-  flex-direction: row;
-  background-color: var(--white);
-  width: 350px;
-  height: 90px;
-  border-radius: 0.2em;
+.wrapper h1,
+h3 {
+  font-weight: 400;
+  font-family: Poppins;
+  margin-top: 5%;
+}
+
+.wrapper img {
+  width: 35%;
+  height: auto;
+}
+
+.left .pWrapper {
+  font-size: 0.9em;
+  font-family: Poppins;
+  padding: 9%;
+}
+
+.left .pWrapper p {
+  margin: 0;
 }
 
 h2 {
   height: auto;
-  margin: 0;
+  margin: 0 0 3% 0;
   color: var(--white);
   font-family: Poppins;
   font-weight: 400;
@@ -76,6 +93,7 @@ h5 {
 }
 
 input {
+  width: 20em;
   border: 0;
   outline: 0;
   background-color: var(--grey);
@@ -83,6 +101,7 @@ input {
   margin-right: 2%;
   padding: 5px;
   color: var(--dark);
+  font-size: 10px;
 }
 
 button {
@@ -98,4 +117,31 @@ button {
 
 button:hover {
   background-color: var(--darkblue);
+}
+
+.right {
+  width: 30%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tile {
+  width: 100%;
+  height: auto;
+  padding: 3%;
+  margin-bottom: 5%;
+  background-color: var(--white);
+  font-family: Poppins;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0.2em;
+  font-size: 1.2em;
+}
+
+img {
+  position: static;
+  width: 25%;
 }

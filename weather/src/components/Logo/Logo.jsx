@@ -16,6 +16,7 @@ const Logo = () => {
 
   return (
     <img
+      id="logoElement"
       className={isActive ? "active" : "inActive"}
       src="src/assets/Logo.png"
       alt="Weather website logo"

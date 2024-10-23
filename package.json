@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "prop-types": "^15.8.1",
     "vite": "^5.4.9"
   }
 }
