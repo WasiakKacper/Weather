@@ -51,8 +51,12 @@ h3 {
   margin-top: 5%;
 }
 
+h1 {
+  width: 120px;
+}
+
 .wrapper img {
-  width: 35%;
+  width: 140px;
   height: auto;
 }
 
