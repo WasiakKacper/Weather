@@ -91,41 +91,48 @@ const Tiles = () => {
   }, []);
 
   //RENDER WEATHER INFO ON NAME CHANGE
+  const [cityNameFalse, setCityNameFalse] = useState(true);
+
   useEffect(() => {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?&units=metric&q=${name}&appid=f896c2a1c7c45a7bc7ed8f976fb80b59`
     )
       .then((response) => response.json())
       .then((data) => {
-        setTemp(Math.round(data.main.temp));
-        setWindSpeed(Math.round(data.wind.speed));
-        setPressure(Math.round(data.main.pressure));
+        if (data.cod != "404" && data.cod != "400") {
+          setTemp(Math.round(data.main.temp));
+          setWindSpeed(Math.round(data.wind.speed));
+          setPressure(Math.round(data.main.pressure));
+          setCityNameFalse(true);
 
-        switch (data.weather[0].main) {
-          case "Clouds":
-            setImage("src/assets/Images/cloudy.png");
-            break;
-          case "Mist":
-            setImage("src/assets/Images/mist.png");
-            break;
-          case "Rain":
-            setImage("src/assets/Images/rain.png");
-            break;
-          case "Drizzle":
-            setImage("src/assets/Images/rain.png");
-            break;
-          case "Snow":
-            setImage("src/assets/Images/snowy.png");
-            break;
-          case "Clear":
-            setImage("src/assets/Images/sunny.png");
-            break;
-          case "Few Clouds":
-            setImage("src/assets/Images/partly cloudy.png");
-            break;
-          case "Storm":
-            setImage("src/assets/Images/Storm.png");
-            break;
+          switch (data.weather[0].main) {
+            case "Clouds":
+              setImage("src/assets/Images/cloudy.png");
+              break;
+            case "Mist":
+              setImage("src/assets/Images/mist.png");
+              break;
+            case "Rain":
+              setImage("src/assets/Images/rain.png");
+              break;
+            case "Drizzle":
+              setImage("src/assets/Images/rain.png");
+              break;
+            case "Snow":
+              setImage("src/assets/Images/snowy.png");
+              break;
+            case "Clear":
+              setImage("src/assets/Images/sunny.png");
+              break;
+            case "Few Clouds":
+              setImage("src/assets/Images/partly cloudy.png");
+              break;
+            case "Storm":
+              setImage("src/assets/Images/Storm.png");
+              break;
+          }
+        } else {
+          setCityNameFalse(false);
         }
       });
   }, [name]);
@@ -136,111 +143,124 @@ const Tiles = () => {
   const [parisTemp, setParisTemp] = useState("--°C");
 
   const [londonIcon, setLondonIcon] = useState("src/assets/Images/sunny.png");
-  const [berlinIcon, setBerlinIcon] = useState("src/assets/Images/sunny.png");
+  const [berilIcon, setBerlinIcon] = useState("src/assets/Images/sunny.png");
   const [parisIcon, setParisIcon] = useState("src/assets/Images/sunny.png");
 
+  const dictionary = {
+    key01: londonTemp,
+    key11: londonIcon,
+    key02: berlinTemp,
+    key22: berilIcon,
+    key03: parisTemp,
+    key33: parisIcon,
+  };
+
   useEffect(() => {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?&units=metric&q=London&appid=f896c2a1c7c45a7bc7ed8f976fb80b59`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setLondonTemp(Math.round(data.main.temp) + "°C");
-        switch (data.weather[0].main) {
-          case "Clouds":
-            setLondonIcon("src/assets/Images/cloudy.png");
-            break;
-          case "Mist":
-            setLondonIcon("src/assets/Images/mist.png");
-            break;
-          case "Rain":
-            setLondonIcon("src/assets/Images/rain.png");
-            break;
-          case "Drizzle":
-            setLondonIcon("src/assets/Images/rain.png");
-            break;
-          case "Snow":
-            setLondonIcon("src/assets/Images/snowy.png");
-            break;
-          case "Clear":
-            setLondonIcon("src/assets/Images/sunny.png");
-            break;
-          case "Few Clouds":
-            setLondonIcon("src/assets/Images/partly cloudy.png");
-            break;
-          case "Storm":
-            setLondonIcon("src/assets/Images/Storm.png");
-            break;
-        }
-      });
+    const cities = ["London", "Berlin", "Paris"];
 
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?&units=metric&q=Berlin&appid=f896c2a1c7c45a7bc7ed8f976fb80b59`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setBerlinTemp(Math.round(data.main.temp) + "°C");
-        switch (data.weather[0].main) {
-          case "Clouds":
-            setBerlinIcon("src/assets/Images/cloudy.png");
-            break;
-          case "Mist":
-            setBerlinIcon("src/assets/Images/mist.png");
-            break;
-          case "Rain":
-            setBerlinIcon("src/assets/Images/rain.png");
-            break;
-          case "Drizzle":
-            setBerlinIcon("src/assets/Images/rain.png");
-            break;
-          case "Snow":
-            setBerlinIcon("src/assets/Images/snowy.png");
-            break;
-          case "Clear":
-            setBerlinIcon("src/assets/Images/sunny.png");
-            break;
-          case "Few Clouds":
-            setBerlinIcon("src/assets/Images/partly cloudy.png");
-            break;
-          case "Storm":
-            setBerlinIcon("src/assets/Images/Storm.png");
-            break;
-        }
-      });
-
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?&units=metric&q=Paris&appid=f896c2a1c7c45a7bc7ed8f976fb80b59`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setParisTemp(Math.round(data.main.temp) + "°C");
-        switch (data.weather[0].main) {
-          case "Clouds":
-            setParisIcon("src/assets/Images/cloudy.png");
-            break;
-          case "Mist":
-            setParisIcon("src/assets/Images/mist.png");
-            break;
-          case "Rain":
-            setParisIcon("src/assets/Images/rain.png");
-            break;
-          case "Drizzle":
-            setParisIcon("src/assets/Images/rain.png");
-            break;
-          case "Snow":
-            setParisIcon("src/assets/Images/snowy.png");
-            break;
-          case "Clear":
-            setParisIcon("src/assets/Images/sunny.png");
-            break;
-          case "Few Clouds":
-            setParisIcon("src/assets/Images/partly cloudy.png");
-            break;
-          case "Storm":
-            setParisIcon("src/assets/Images/Storm.png");
-            break;
-        }
-      });
+    cities.forEach((city) => {
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?&units=metric&q=${city}&appid=f896c2a1c7c45a7bc7ed8f976fb80b59`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          if (city == "London") {
+            setLondonTemp(
+              (dictionary.key1 =
+                JSON.stringify(Math.round(data.main.temp)) + "°C")
+            );
+            switch (data.weather[0].main) {
+              case "Clouds":
+                setLondonIcon("src/assets/Images/cloudy.png");
+                break;
+              case "Mist":
+                setLondonIcon("src/assets/Images/mist.png");
+                break;
+              case "Rain":
+                setLondonIcon("src/assets/Images/rain.png");
+                break;
+              case "Drizzle":
+                setLondonIcon("src/assets/Images/rain.png");
+                break;
+              case "Snow":
+                setLondonIcon("src/assets/Images/snowy.png");
+                break;
+              case "Clear":
+                setLondonIcon("src/assets/Images/sunny.png");
+                break;
+              case "Few Clouds":
+                setLondonIcon("src/assets/Images/partly cloudy.png");
+                break;
+              case "Storm":
+                setLondonIcon(() => ["src/assets/Images/Storm.png"]);
+                break;
+            }
+          } else if (city == "Berlin") {
+            setBerlinTemp(
+              (dictionary.key2 =
+                JSON.stringify(Math.round(data.main.temp)) + "°C")
+            );
+            switch (data.weather[0].main) {
+              case "Clouds":
+                setBerlinIcon("src/assets/Images/cloudy.png");
+                break;
+              case "Mist":
+                setBerlinIcon("src/assets/Images/mist.png");
+                break;
+              case "Rain":
+                setBerlinIcon("src/assets/Images/rain.png");
+                break;
+              case "Drizzle":
+                setBerlinIcon("src/assets/Images/rain.png");
+                break;
+              case "Snow":
+                setBerlinIcon("src/assets/Images/snowy.png");
+                break;
+              case "Clear":
+                setBerlinIcon("src/assets/Images/sunny.png");
+                break;
+              case "Few Clouds":
+                setBerlinIcon("src/assets/Images/partly cloudy.png");
+                break;
+              case "Storm":
+                setBerlinIcon("src/assets/Images/Storm.png");
+                break;
+            }
+          } else if (city == "Paris") {
+            setParisTemp(
+              (dictionary.key3 =
+                JSON.stringify(Math.round(data.main.temp)) + "°C")
+            );
+            switch (data.weather[0].main) {
+              case "Clouds":
+                setParisIcon("src/assets/Images/cloudy.png");
+                break;
+              case "Mist":
+                setParisIcon("src/assets/Images/mist.png");
+                break;
+              case "Rain":
+                setParisIcon("src/assets/Images/rain.png");
+                break;
+              case "Drizzle":
+                setParisIcon("src/assets/Images/rain.png");
+                break;
+              case "Snow":
+                setParisIcon("src/assets/Images/snowy.png");
+                break;
+              case "Clear":
+                setParisIcon("src/assets/Images/sunny.png");
+                break;
+              case "Few Clouds":
+                setParisIcon("src/assets/Images/partly cloudy.png");
+                break;
+              case "Storm":
+                setParisIcon("src/assets/Images/Storm.png");
+                break;
+            }
+          }
+        });
+    });
+    console.log(dictionary);
   }, []);
 
   //JSX
@@ -262,23 +282,43 @@ const Tiles = () => {
           </div>
         </div>
 
-        <div className="wrapper">
-          <div className="textWrapper">
-            <h1>{name}</h1>
-            <h3>{temp}°C</h3>
+        {cityNameFalse ? (
+          <div className="cityExists">
+            <div className="wrapper">
+              <div className="textWrapper">
+                <h1>{name}</h1>
+                <h3>{temp + "°C"}</h3>
+              </div>
+              <img src={image} alt="" />
+            </div>
+            <div className="pWrapper">
+              <p>Wind speed: {windSpeed}km/h</p>
+              <p>Pressure: {pressure}hPa</p>
+            </div>
           </div>
-          <img src={image} alt="" />
-        </div>
-        <div className="pWrapper">
-          <p>Wind speed: {windSpeed}km/h</p>
-          <p>Pressure: {pressure}hPa</p>
-        </div>
+        ) : (
+          <div className="cityNotExists">
+            Oops, the city name was incorrect. Please try again.
+          </div>
+        )}
       </div>
       <div className="right">
         <h2>Weather in the world: </h2>
-        <Tile city="London" temperature={londonTemp} icon={londonIcon} />
-        <Tile city="Berlin" temperature={berlinTemp} icon={berlinIcon} />
-        <Tile city="Paris" temperature={parisTemp} icon={parisIcon} />
+        <Tile
+          city="London"
+          temperature={dictionary.key01}
+          icon={dictionary.key11}
+        />
+        <Tile
+          city="Berlin"
+          temperature={dictionary.key02}
+          icon={dictionary.key22}
+        />
+        <Tile
+          city="Paris"
+          temperature={dictionary.key03}
+          icon={dictionary.key33}
+        />
       </div>
     </section>
   );
