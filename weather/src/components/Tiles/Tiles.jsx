@@ -49,7 +49,7 @@ const Tiles = () => {
   const [temp, setTemp] = useState("--°C");
   const [windSpeed, setWindSpeed] = useState("--km/h");
   const [pressure, setPressure] = useState("----hPa");
-  const [image, setImage] = useState("src/assets/Images/sunny.png");
+  const [image, setImage] = useState("/Images/sunny.png");
 
   useEffect(() => {
     fetch(
@@ -63,28 +63,28 @@ const Tiles = () => {
 
         switch (data.weather[0].main) {
           case "Clouds":
-            setImage("src/assets/Images/cloudy.png");
+            setImage("/Images/cloudy.png");
             break;
           case "Mist":
-            setImage("src/assets/Images/mist.png");
+            setImage("/Images/mist.png");
             break;
           case "Rain":
-            setImage("src/assets/Images/rain.png");
+            setImage("/Images/rain.png");
             break;
           case "Drizzle":
-            setImage("src/assets/Images/rain.png");
+            setImage("/Images/rain.png");
             break;
           case "Snow":
-            setImage("src/assets/Images/snowy.png");
+            setImage("/Images/snowy.png");
             break;
           case "Clear":
-            setImage("src/assets/Images/sunny.png");
+            setImage("/Images/sunny.png");
             break;
           case "Few Clouds":
-            setImage("src/assets/Images/partly cloudy.png");
+            setImage("/Images/partly cloudy.png");
             break;
           case "Storm":
-            setImage("src/assets/Images/Storm.png");
+            setImage("/Images/Storm.png");
             break;
         }
       });
@@ -107,28 +107,28 @@ const Tiles = () => {
 
           switch (data.weather[0].main) {
             case "Clouds":
-              setImage("src/assets/Images/cloudy.png");
+              setImage("/Images/cloudy.png");
               break;
             case "Mist":
-              setImage("src/assets/Images/mist.png");
+              setImage("/Images/mist.png");
               break;
             case "Rain":
-              setImage("src/assets/Images/rain.png");
+              setImage("/Images/rain.png");
               break;
             case "Drizzle":
-              setImage("src/assets/Images/rain.png");
+              setImage("/Images/rain.png");
               break;
             case "Snow":
-              setImage("src/assets/Images/snowy.png");
+              setImage("/Images/snowy.png");
               break;
             case "Clear":
-              setImage("src/assets/Images/sunny.png");
+              setImage("/Images/sunny.png");
               break;
             case "Few Clouds":
-              setImage("src/assets/Images/partly cloudy.png");
+              setImage("/Images/partly cloudy.png");
               break;
             case "Storm":
-              setImage("src/assets/Images/Storm.png");
+              setImage("/Images/Storm.png");
               break;
           }
         } else {
@@ -142,9 +142,9 @@ const Tiles = () => {
   const [berlinTemp, setBerlinTemp] = useState("--°C");
   const [parisTemp, setParisTemp] = useState("--°C");
 
-  const [londonIcon, setLondonIcon] = useState("src/assets/Images/sunny.png");
-  const [berilIcon, setBerlinIcon] = useState("src/assets/Images/sunny.png");
-  const [parisIcon, setParisIcon] = useState("src/assets/Images/sunny.png");
+  const [londonIcon, setLondonIcon] = useState("/Images/sunny.png");
+  const [berilIcon, setBerlinIcon] = useState("/Images/sunny.png");
+  const [parisIcon, setParisIcon] = useState("/Images/sunny.png");
 
   const dictionary = {
     key01: londonTemp,
@@ -171,28 +171,28 @@ const Tiles = () => {
             );
             switch (data.weather[0].main) {
               case "Clouds":
-                setLondonIcon("src/assets/Images/cloudy.png");
+                setLondonIcon("/Images/cloudy.png");
                 break;
               case "Mist":
-                setLondonIcon("src/assets/Images/mist.png");
+                setLondonIcon("/Images/mist.png");
                 break;
               case "Rain":
-                setLondonIcon("src/assets/Images/rain.png");
+                setLondonIcon("/Images/rain.png");
                 break;
               case "Drizzle":
-                setLondonIcon("src/assets/Images/rain.png");
+                setLondonIcon("/Images/rain.png");
                 break;
               case "Snow":
-                setLondonIcon("src/assets/Images/snowy.png");
+                setLondonIcon("/Images/snowy.png");
                 break;
               case "Clear":
-                setLondonIcon("src/assets/Images/sunny.png");
+                setLondonIcon("/Images/sunny.png");
                 break;
               case "Few Clouds":
-                setLondonIcon("src/assets/Images/partly cloudy.png");
+                setLondonIcon("/Images/partly cloudy.png");
                 break;
               case "Storm":
-                setLondonIcon(() => ["src/assets/Images/Storm.png"]);
+                setLondonIcon(() => ["/Images/Storm.png"]);
                 break;
             }
           } else if (city == "Berlin") {
@@ -202,28 +202,28 @@ const Tiles = () => {
             );
             switch (data.weather[0].main) {
               case "Clouds":
-                setBerlinIcon("src/assets/Images/cloudy.png");
+                setBerlinIcon("/Images/cloudy.png");
                 break;
               case "Mist":
-                setBerlinIcon("src/assets/Images/mist.png");
+                setBerlinIcon("/Images/mist.png");
                 break;
               case "Rain":
-                setBerlinIcon("src/assets/Images/rain.png");
+                setBerlinIcon("/Images/rain.png");
                 break;
               case "Drizzle":
-                setBerlinIcon("src/assets/Images/rain.png");
+                setBerlinIcon("/Images/rain.png");
                 break;
               case "Snow":
-                setBerlinIcon("src/assets/Images/snowy.png");
+                setBerlinIcon("/Images/snowy.png");
                 break;
               case "Clear":
-                setBerlinIcon("src/assets/Images/sunny.png");
+                setBerlinIcon("/Images/sunny.png");
                 break;
               case "Few Clouds":
-                setBerlinIcon("src/assets/Images/partly cloudy.png");
+                setBerlinIcon("/Images/partly cloudy.png");
                 break;
               case "Storm":
-                setBerlinIcon("src/assets/Images/Storm.png");
+                setBerlinIcon("/Images/Storm.png");
                 break;
             }
           } else if (city == "Paris") {
@@ -233,28 +233,28 @@ const Tiles = () => {
             );
             switch (data.weather[0].main) {
               case "Clouds":
-                setParisIcon("src/assets/Images/cloudy.png");
+                setParisIcon("/Images/cloudy.png");
                 break;
               case "Mist":
-                setParisIcon("src/assets/Images/mist.png");
+                setParisIcon("/Images/mist.png");
                 break;
               case "Rain":
-                setParisIcon("src/assets/Images/rain.png");
+                setParisIcon("/Images/rain.png");
                 break;
               case "Drizzle":
-                setParisIcon("src/assets/Images/rain.png");
+                setParisIcon("/Images/rain.png");
                 break;
               case "Snow":
-                setParisIcon("src/assets/Images/snowy.png");
+                setParisIcon("/Images/snowy.png");
                 break;
               case "Clear":
-                setParisIcon("src/assets/Images/sunny.png");
+                setParisIcon("/Images/sunny.png");
                 break;
               case "Few Clouds":
-                setParisIcon("src/assets/Images/partly cloudy.png");
+                setParisIcon("/Images/partly cloudy.png");
                 break;
               case "Storm":
-                setParisIcon("src/assets/Images/Storm.png");
+                setParisIcon("/Images/Storm.png");
                 break;
             }
           }

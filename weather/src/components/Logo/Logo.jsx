@@ -1,4 +1,5 @@
 import "./Logo.css";
+import logo from "/Logo.png";
 import { useState } from "react";
 
 const sleep = (ms) => {
@@ -18,8 +19,7 @@ const Logo = () => {
     <img
       id="logoElement"
       className={isActive ? "active" : "inActive"}
-      src="src/assets/Logo.png"
-      alt="Weather website logo"
+      src={logo}
     />
   );
 };
