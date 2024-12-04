@@ -19,24 +19,30 @@
 section {
   position: absolute;
   top: 100%;
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-  justify-content: center;
-  scale: 1;
-  padding: 5%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  width: 80%;
+  max-width: 1900px;
+  margin: 0 auto;
+  transform: translate(-50%, 100%);
+  height: auto;
 }
 
 section.active {
   top: 5%;
   transition: ease 500ms;
+  transform: translate(-50%, 20%);
 }
+
+/* Dodaj responsywne czcionki, bloki oraz dodaj widok na mobilki */
 
 .left {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 75vh;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
   border-radius: 1%;
   background-color: var(--white);
   padding: 5%;
@@ -56,12 +62,15 @@ section.active {
 
 .inputWrapper {
   width: 100%;
-  display: flex;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  column-gap: 2em;
   margin-bottom: 5%;
 }
 
 input {
-  width: 450px;
+  width: 100%;
   border: 0;
   outline: 0;
   background-color: var(--grey);
@@ -69,11 +78,13 @@ input {
   margin-right: 2%;
   padding: 2%;
   color: var(--dark);
-  font-size: 1.5em;
+  font-size: 2em;
+  padding: auto;
 }
 
 button {
-  width: 120px;
+  width: 100%;
+  min-width: 120px;
   border: 0;
   background-color: var(--blue);
   color: var(--white);
@@ -108,7 +119,7 @@ h3 {
 }
 
 .left .pWrapper {
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .left .pWrapper p {
@@ -132,7 +143,7 @@ h2 {
 
 .right {
   font-size: 2em;
-  width: 40%;
+  width: 100%;
   margin-left: 5%;
   display: flex;
   flex-direction: column;
@@ -140,6 +151,7 @@ h2 {
 
 .tile {
   width: 100%;
+  max-width: 900px;
   height: auto;
   padding: 3%;
   margin-bottom: 5%;
@@ -156,4 +168,49 @@ h2 {
 
 img {
   width: 25%;
+  height: auto;
+}
+
+/* Large screens */
+@media screen and (max-width: 1200px) {
+  .search h5 {
+    font: 2.5em "Poppins";
+  }
+
+  .right h2 {
+    font-size: 2em;
+  }
+}
+
+/* Medium screens */
+@media screen and (max-width: 992px) {
+  section.active {
+    display: flex;
+    flex-direction: column;
+    top: 3%;
+    transform: translate(-50%, 10%);
+  }
+
+  .search h5 {
+    font: 1.5em "Poppins";
+  }
+
+  .right {
+    margin-left: 0;
+  }
+
+  .right h2 {
+    font-size: 1.5em;
+  }
+}
+
+/* Small screens */
+@media screen and (max-width: 768px) {
+  .search h5 {
+    font: 1.5em "Poppins";
+  }
+
+  .right h2 {
+    font-size: 1.5em;
+  }
 }
